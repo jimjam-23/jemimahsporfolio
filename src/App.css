@@ -1,0 +1,427 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@300;400;500;600&display=swap");
+
+:root {
+  --bg: #d9efff;
+  --bg-alt: #cfe7ff;
+  --ink: #1a1a1a;
+  --muted: #4b4b4b;
+  --surface: #fff9f0;
+  --accent-coral: #ea775b;
+  --accent-gold: #d7a03a;
+  --accent-mint: #5da59c;
+  --accent-blue: #4b6fa9;
+  --accent-olive: #7b8a52;
+  --accent-lilac: #ad84b3;
+  --radius: 28px;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #fff7ee 0%, var(--bg) 40%)
+      no-repeat,
+    radial-gradient(circle at 10% 20%, #efe1d2 0%, transparent 55%)
+      no-repeat,
+    radial-gradient(circle at 90% 10%, #f8eddc 0%, transparent 50%)
+      no-repeat,
+    var(--bg);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: "Space Grotesk", sans-serif;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.page {
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), transparent 70%);
+  top: -200px;
+  right: -120px;
+  filter: blur(0px);
+  z-index: 0;
+}
+
+.hero {
+  padding: 40px 8vw 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.logo {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.nav-button {
+  background: var(--ink);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  margin: 16px 0 20px;
+  letter-spacing: -0.5px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.subhead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 520px;
+}
+
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.primary {
+  background: var(--ink);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.ghost {
+  border: 1px solid var(--ink);
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.meta span {
+  font-size: 1.6rem;
+  font-family: "Fraunces", serif;
+}
+
+.meta p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hero-card {
+  background: var(--surface);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #f1d9be 0%, transparent 70%);
+  bottom: -60px;
+  right: -60px;
+}
+
+.hero-card-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hero-card h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+}
+
+.hero-card p {
+  color: var(--muted);
+}
+
+.hero-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.section {
+  padding: 80px 8vw;
+  position: relative;
+  z-index: 1;
+}
+
+.section.alt {
+  background: var(--bg-alt);
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(240px, 320px);
+  gap: 32px;
+  margin-bottom: 40px;
+  align-items: end;
+}
+
+.section-header h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.section-copy {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid transparent;
+  border-radius: 22px;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+  min-height: 240px;
+  animation: floatUp 0.8s ease both;
+}
+
+.project-card h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.project-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #fff;
+  width: fit-content;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.chip {
+  background: rgba(26, 26, 26, 0.08);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+  animation: fadeIn 0.7s ease both;
+}
+
+.gallery-thumb {
+  height: 140px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f1dbc8, #f9efe5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.gallery-info h4 {
+  font-family: "Fraunces", serif;
+  font-size: 1.1rem;
+}
+
+.gallery-info p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer {
+  padding: 80px 8vw 60px;
+  display: grid;
+  gap: 24px;
+  background: #121212;
+  color: #fef6ed;
+}
+
+.footer h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer .primary {
+  background: #fef6ed;
+  color: #121212;
+}
+
+.footer .chip {
+  color: #fef6ed;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.footer-note {
+  font-size: 0.85rem;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-header {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 24px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .hero-actions,
+  .footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
